@@ -254,9 +254,10 @@ namespace tts_generator
             {
                 Environment.Exit(0);
             }
-            else
+            if (true)
             {
-               appRunning("dreamdaemon");
+                Thread progkill = new Thread(() => appRunning("dreamdaemon"));//new thread that kills the program when dd stops
+                progkill.Start();
             }
 
             fte = new FonixTalkEngine();
